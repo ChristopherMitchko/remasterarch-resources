@@ -1,0 +1,17 @@
+#!/bin/bash
+#################################################################################################################
+#
+#################################################################################################################
+
+# create an arch linux package list file
+pacman -Qe | awk '{print $1}' > packages.x86_64
+
+# install all packages in the package list one by one
+# for x in $(cat packages.x86_64); do pacman -S $x; done
+# install from package list but only works if in official repo's
+# pacman -S `cat packages.x86_64`
+
+
+
+
+

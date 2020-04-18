@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+###########################################################################################
+# script to be run as root but execute commands as a different user
+###########################################################################################
+
+
+
+sudo -u sig7 bash -c : && RUNAS="sudo -u sig7"
+
+echo 1: echo the user and uid
+echo USER= $USER
+echo UID=  $UID
+
+#Runs bash with commands between '_' as nobody if possible
+$RUNAS bash<<_
+echo 2: commands being run as different user starting with backslash using a simple funtion
+echo USER= \$USER
+echo UID=  \$UID
+_
+
+echo 3: command being run normally again
+echo USER= $USER
+echo UID=  $UID
+
+
